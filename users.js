@@ -1,24 +1,14 @@
 console.log("users.js loaded");
 
-/**
- * Käyttäjä-välilehden toiminnot
- * - Delegoitu event handling - toimii AJAX-latauksen jälkeenkin
- */
 (function () {
     var base = typeof SF_BASE_URL !== "undefined"
         ? SF_BASE_URL.replace(/\/+$/, "")
         : "";
 
-    // Delegoitu click-käsittelijä - sidotaan documentiin, toimii aina
     document.addEventListener("click", function (e) {
-
-        // Tarkista että ollaan settings-sivulla
         var settingsPage = document.querySelector(".sf-settings-page");
         if (!settingsPage) return;
 
-        /* =========================
-           LISÄÄ KÄYTTÄJÄ
-           ========================= */
         if (e.target.closest("#sfUserAddBtn")) {
             var userModal = document.getElementById("sfUserModal");
             var userForm = document.getElementById("sfUserForm");
@@ -38,9 +28,6 @@ console.log("users.js loaded");
             return;
         }
 
-        /* =========================
-           MUOKKAA KÄYTTÄJÄ
-           ========================= */
         var editBtn = e.target.closest(".sf-edit-user");
         if (editBtn) {
             var userModal = document.getElementById("sfUserModal");
@@ -73,15 +60,11 @@ console.log("users.js loaded");
             return;
         }
 
-        /* =========================
-           POISTA KÄYTTÄJÄ -nappi
-           ========================= */
         var delBtn = e.target.closest(".sf-delete-user");
         if (delBtn) {
             var deleteModal = document.getElementById("sfDeleteModal");
             var deleteName = document.getElementById("sfDeleteUserName");
 
-            // Hae nimi riviltä tai kortilta
             var row = delBtn.closest("tr");
             var card = delBtn.closest(".sf-user-card");
             var name = "käyttäjä";
@@ -102,15 +85,11 @@ console.log("users.js loaded");
             return;
         }
 
-        /* =========================
-           RESET SALASANA -nappi
-           ========================= */
         var resetBtn = e.target.closest(".sf-reset-pass");
         if (resetBtn) {
             var resetModal = document.getElementById("sfResetModal");
             var resetName = document.getElementById("sfResetUserName");
 
-            // Hae email riviltä tai kortilta
             var row = resetBtn.closest("tr");
             var card = resetBtn.closest(".sf-user-card");
             var email = "";
@@ -131,9 +110,6 @@ console.log("users.js loaded");
             return;
         }
 
-        /* =========================
-           PERUUTA-napit
-           ========================= */
         if (e.target.closest("#sfUserCancel")) {
             var modal = document.getElementById("sfUserModal");
             if (modal) modal.classList.add("hidden");
@@ -152,9 +128,6 @@ console.log("users.js loaded");
             return;
         }
 
-        /* =========================
-           POISTA VAHVISTA
-           ========================= */
         if (e.target.closest("#sfDeleteConfirm")) {
             var modal = document.getElementById("sfDeleteModal");
             var userId = modal ? modal.dataset.userId : null;
@@ -180,9 +153,6 @@ console.log("users.js loaded");
             return;
         }
 
-        /* =========================
-           RESET VAHVISTA
-           ========================= */
         if (e.target.closest("#sfResetConfirm")) {
             var modal = document.getElementById("sfResetModal");
             var userId = modal ? modal.dataset.userId : null;
@@ -211,9 +181,6 @@ console.log("users.js loaded");
         }
     });
 
-    /* =========================
-       LOMAKKEEN SUBMIT (delegoitu)
-       ========================= */
     document.addEventListener("submit", function (e) {
         var userForm = e.target.closest("#sfUserForm");
         if (!userForm) return;
@@ -250,5 +217,4 @@ console.log("users.js loaded");
             })
             .catch(function () { alert("Verkkovirhe."); });
     });
-
 })();
