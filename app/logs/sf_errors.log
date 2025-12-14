@@ -1,0 +1,277 @@
+[2025-12-08 07:12:30] DEBUG users_create.php: käynnistyy, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:12:30] DEBUG users_create.php: POST=Array
+(
+    [id] => 
+    [first_name] => Janne
+    [last_name] => Ulvinen
+    [email] => janne.ulvinen@tapojarvi.com
+    [role_id] => 3
+    [home_worksite_id] => 
+    [password] => demo123
+)
+
+[2025-12-08 07:12:30] DEBUG users_create.php: kutsu sf_require_role
+[2025-12-08 07:12:30] DEBUG users_create.php: CSRF ennen validointia: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3
+[2025-12-08 07:12:30] DEBUG users_create.php: CSRF FAIL: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:12:30] DEBUG users_create.php: käynnistyy, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:12:30] DEBUG users_create.php: POST=Array
+(
+    [id] => 
+    [first_name] => Janne
+    [last_name] => Ulvinen
+    [email] => janne.ulvinen@tapojarvi.com
+    [role_id] => 3
+    [home_worksite_id] => 
+    [password] => demo123
+)
+
+[2025-12-08 07:12:30] DEBUG users_create.php: kutsu sf_require_role
+[2025-12-08 07:12:30] DEBUG users_create.php: CSRF ennen validointia: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3
+[2025-12-08 07:12:30] DEBUG users_create.php: CSRF FAIL: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:17:40] DEBUG users_create.php: käynnistyy, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:17:40] DEBUG users_create.php: POST=Array
+(
+    [id] => 
+    [first_name] => Janne
+    [last_name] => Ulvinen
+    [email] => janne.ulvinen@tapojarvi.com
+    [role_id] => 3
+    [home_worksite_id] => 
+    [password] => demo123
+)
+
+[2025-12-08 07:17:40] DEBUG users_create.php: kutsu sf_require_role
+[2025-12-08 07:17:40] DEBUG users_create.php: CSRF ennen validointia: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3
+[2025-12-08 07:17:40] DEBUG users_create.php: CSRF FAIL: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:25:44] DEBUG users_create.php: käynnistyy, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:25:44] DEBUG users_create.php: POST=Array
+(
+    [id] => 
+    [first_name] => Janne
+    [last_name] => Ulvinen
+    [email] => janne.ulvinen@tapojarvi.com
+    [role_id] => 3
+    [home_worksite_id] => 
+    [password] => demo123
+)
+
+[2025-12-08 07:25:44] DEBUG users_create.php: kutsu sf_require_role
+[2025-12-08 07:25:44] DEBUG users_create.php: CSRF ennen validointia: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3
+[2025-12-08 07:25:44] DEBUG users_create.php: CSRF FAIL: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:29:22] DEBUG users_create.php: käynnistyy, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:29:22] DEBUG users_create.php: POST=Array
+(
+    [id] => 
+    [first_name] => Janne
+    [last_name] => Ulvinen
+    [email] => janne.ulvinen@tapojarvi.com
+    [role_id] => 3
+    [home_worksite_id] => 
+    [password] => demo123
+)
+
+[2025-12-08 07:29:22] DEBUG users_create.php: kutsu sf_require_role
+[2025-12-08 07:29:22] DEBUG users_create.php: CSRF ennen validointia: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3
+[2025-12-08 07:29:22] DEBUG users_create.php: CSRF FAIL: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:49:13] DEBUG users_create.php: käynnistyy, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 07:49:13] DEBUG users_create.php: POST=Array
+(
+    [id] => 
+    [first_name] => Janne
+    [last_name] => Ulvinen
+    [email] => janne.ulvinen@tapojarvi.com
+    [role_id] => 3
+    [home_worksite_id] => 
+    [password] => demo123
+)
+
+[2025-12-08 07:49:13] DEBUG users_create.php: kutsu sf_require_role
+[2025-12-08 07:49:13] DEBUG users_create.php: CSRF ennen validointia: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3
+[2025-12-08 07:49:13] DEBUG users_create.php: CSRF FAIL: post_token=PUUTTUU, session_token=e453df9b417ff667749646349f7b45d489cab6e8cdf0879719586000641df4e3, session_id=rnavv0r9s2c7e2cj6i157bmg3g
+[2025-12-08 10:26:35] === PREVIEW DATA DEBUG ===
+[2025-12-08 10:26:35] preview_image_data length: 184387
+[2025-12-08 10:26:35] preview_image_data_2 length: 0
+[2025-12-08 10:26:35] preview_image_data starts with: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
+[2025-12-08 10:26:35] POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-08 10:26:35] === END PREVIEW DEBUG ===
+[2025-12-08 10:26:35] === save_flash.php DEBUG ===
+[2025-12-08 10:26:35] $_FILES count: 3
+[2025-12-08 10:26:35] File 'image1': name=, error=4, size=0, tmp_name=
+[2025-12-08 10:26:35] File 'image2': name=, error=4, size=0, tmp_name=
+[2025-12-08 10:26:35] File 'image3': name=, error=4, size=0, tmp_name=
+[2025-12-08 10:26:35] $_POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-08 10:26:35] type: red
+[2025-12-08 10:26:35] === END DEBUG ===
+[2025-12-08 10:26:35] Copied library image: lib_20251204_012934_00b410b2.png -> lib_copy_20251208_102635_30d95f.png
+[2025-12-08 12:07:25] === PREVIEW DATA DEBUG ===
+[2025-12-08 12:07:25] preview_image_data length: 173059
+[2025-12-08 12:07:25] preview_image_data_2 length: 0
+[2025-12-08 12:07:25] preview_image_data starts with: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
+[2025-12-08 12:07:25] POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-08 12:07:25] === END PREVIEW DEBUG ===
+[2025-12-08 12:07:25] === save_flash.php DEBUG ===
+[2025-12-08 12:07:25] $_FILES count: 3
+[2025-12-08 12:07:25] File 'image1': name=, error=4, size=0, tmp_name=
+[2025-12-08 12:07:25] File 'image2': name=41919.jpg, error=0, size=3466392, tmp_name=/tmp/phpbWO5PM
+[2025-12-08 12:07:25] File 'image3': name=, error=4, size=0, tmp_name=
+[2025-12-08 12:07:25] $_POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-08 12:07:25] type: yellow
+[2025-12-08 12:07:25] === END DEBUG ===
+[2025-12-08 12:07:25] Copied library image: lib_20251204_012934_00b410b2.png -> lib_copy_20251208_120725_59511f.png
+[2025-12-08 12:07:26] sf_compress_image: Resized 4500x4500 -> 1920x1920
+[2025-12-08 12:07:26] sf_handle_uploaded_image: OK - 41919.jpg compressed 3466392 -> 287888 bytes (92% reduction)
+[2025-12-13 15:26:26] [create_language_version] API called - starting
+[2025-12-13 15:26:26] [create_language_version] Config and auth loaded
+[2025-12-13 15:26:26] [create_language_version] User authenticated: ID=1
+[2025-12-13 15:26:26] [create_language_version] Params: source_id=149, target_lang=it
+[2025-12-13 15:26:26] [create_language_version] Connecting to database
+[2025-12-13 15:26:26] [create_language_version] Database connected
+[2025-12-13 15:26:26] [create_language_version] Source flash found: type=yellow
+[2025-12-13 15:26:26] [create_language_version] Translation group ID: 149
+[2025-12-13 15:26:26] [create_language_version] Processing preview image
+[2025-12-13 15:26:26] [create_language_version] Preview image saved: preview_1765632386_it_693d69827d348.jpg, bytes: 182424
+[2025-12-13 15:26:26] [create_language_version] Inserting new translation
+[2025-12-13 15:26:26] [create_language_version] New translation created with ID: 249
+[2025-12-13 15:26:26] [create_language_version] SUCCESS - Translation created, redirecting to view
+[2025-12-13 15:29:38] === PREVIEW DATA DEBUG ===
+[2025-12-13 15:29:38] preview_image_data length: 216707
+[2025-12-13 15:29:38] preview_image_data_2 length: 0
+[2025-12-13 15:29:38] preview_image_data starts with: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
+[2025-12-13 15:29:38] POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-13 15:29:38] === END PREVIEW DEBUG ===
+[2025-12-13 15:29:38] === save_flash.php DEBUG ===
+[2025-12-13 15:29:38] $_FILES count: 3
+[2025-12-13 15:29:38] File 'image1': name=, error=4, size=0, tmp_name=
+[2025-12-13 15:29:38] File 'image2': name=Emil lindholm vierailu.jpg, error=0, size=588175, tmp_name=/tmp/phphYGT4x
+[2025-12-13 15:29:38] File 'image3': name=, error=4, size=0, tmp_name=
+[2025-12-13 15:29:38] $_POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-13 15:29:38] type: yellow
+[2025-12-13 15:29:38] === END DEBUG ===
+[2025-12-13 15:29:38] Copied library image: lib_20251204_012934_00b410b2.png -> lib_copy_20251213_152938_5d7f28.png
+[2025-12-13 15:29:38] sf_compress_image: Resized 1920x1080 -> 1920x1080
+[2025-12-13 15:29:38] sf_handle_uploaded_image: OK - Emil lindholm vierailu.jpg compressed 588175 -> 202363 bytes (66% reduction)
+[2025-12-13 15:29:38] sf_mail_to_safety_team: CALLED for flashId=250, stateBefore=draft
+[2025-12-13 15:29:38] sf_send_email: CALLED, recipients=no-reply@tapojarvi.online
+[2025-12-13 15:29:39] sf_send_email: MAIL SENT OK
+[2025-12-13 15:30:17] [create_language_version] API called - starting
+[2025-12-13 15:30:17] [create_language_version] Config and auth loaded
+[2025-12-13 15:30:17] [create_language_version] User authenticated: ID=1
+[2025-12-13 15:30:17] [create_language_version] Params: source_id=250, target_lang=it
+[2025-12-13 15:30:17] [create_language_version] Connecting to database
+[2025-12-13 15:30:17] [create_language_version] Database connected
+[2025-12-13 15:30:17] [create_language_version] Source flash found: type=yellow
+[2025-12-13 15:30:17] [create_language_version] Translation group ID: 250
+[2025-12-13 15:30:17] [create_language_version] Processing preview image
+[2025-12-13 15:30:17] [create_language_version] Preview image saved: preview_1765632617_it_693d6a694d37c.jpg, bytes: 97443
+[2025-12-13 15:30:17] [create_language_version] Inserting new translation
+[2025-12-13 15:30:17] [create_language_version] New translation created with ID: 251
+[2025-12-13 15:30:17] [create_language_version] SUCCESS - Translation created, redirecting to view
+[2025-12-13 16:14:22] [create_language_version] API called - starting
+[2025-12-13 16:14:22] [create_language_version] Config and auth loaded
+[2025-12-13 16:14:22] [create_language_version] User authenticated: ID=1
+[2025-12-13 16:14:22] [create_language_version] Params: source_id=249, target_lang=en
+[2025-12-13 16:14:22] [create_language_version] Connecting to database
+[2025-12-13 16:14:22] [create_language_version] Database connected
+[2025-12-13 16:14:22] [create_language_version] Source flash found: type=yellow
+[2025-12-13 16:14:22] [create_language_version] Translation group ID: 149
+[2025-12-13 16:14:22] [create_language_version] Processing preview image
+[2025-12-13 16:14:22] [create_language_version] Preview image saved: preview_1765635262_693d74be12f7e.jpg
+[2025-12-13 16:14:22] [create_language_version] Inserting new translation
+[2025-12-13 16:14:22] [create_language_version] New translation created with ID: 252
+[2025-12-13 16:14:22] [create_language_version] SUCCESS - Translation created, redirecting to view
+[2025-12-13 16:24:35] [create_language_version] API called - starting
+[2025-12-13 16:24:35] [create_language_version] Config and auth loaded
+[2025-12-13 16:24:35] [create_language_version] User authenticated: ID=1
+[2025-12-13 16:24:35] [create_language_version] Params: source_id=252, target_lang=sv
+[2025-12-13 16:24:35] [create_language_version] Connecting to database
+[2025-12-13 16:24:35] [create_language_version] Database connected
+[2025-12-13 16:24:35] [create_language_version] Source flash found: type=yellow
+[2025-12-13 16:24:35] [create_language_version] Translation group ID: 149
+[2025-12-13 16:24:35] [create_language_version] Processing preview image
+[2025-12-13 16:24:35] [create_language_version] Preview image saved: preview_1765635875_693d7723dd9b0.jpg
+[2025-12-13 16:24:35] [create_language_version] Inserting new translation
+[2025-12-13 16:24:35] [create_language_version] New translation created with ID: 253
+[2025-12-13 16:24:35] [create_language_version] SUCCESS - Translation created, redirecting to view
+[2025-12-13 16:35:03] === PREVIEW DATA DEBUG ===
+[2025-12-13 16:35:03] preview_image_data length: 356911
+[2025-12-13 16:35:03] preview_image_data_2 length: 0
+[2025-12-13 16:35:03] preview_image_data starts with: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
+[2025-12-13 16:35:03] POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-13 16:35:03] === END PREVIEW DEBUG ===
+[2025-12-13 16:35:03] === save_flash.php DEBUG ===
+[2025-12-13 16:35:03] $_FILES count: 3
+[2025-12-13 16:35:03] File 'image1': name=Bergsmannen.jpeg, error=0, size=624549, tmp_name=/tmp/phpambUj5
+[2025-12-13 16:35:03] File 'image2': name=, error=4, size=0, tmp_name=
+[2025-12-13 16:35:03] File 'image3': name=, error=4, size=0, tmp_name=
+[2025-12-13 16:35:03] $_POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-13 16:35:03] type: yellow
+[2025-12-13 16:35:03] === END DEBUG ===
+[2025-12-13 16:35:03] sf_compress_image: Resized 2543x1247 -> 1920x942
+[2025-12-13 16:35:03] sf_handle_uploaded_image: OK - Bergsmannen.jpeg compressed 624549 -> 364091 bytes (42% reduction)
+[2025-12-13 16:35:03] sf_mail_to_safety_team: CALLED for flashId=254, stateBefore=draft
+[2025-12-13 16:35:03] sf_send_email: CALLED, recipients=no-reply@tapojarvi.online
+[2025-12-13 16:35:04] sf_send_email: MAIL SENT OK
+[2025-12-13 16:35:20] [create_language_version] API called - starting
+[2025-12-13 16:35:20] [create_language_version] Config and auth loaded
+[2025-12-13 16:35:20] [create_language_version] User authenticated: ID=1
+[2025-12-13 16:35:20] [create_language_version] Params: source_id=254, target_lang=en
+[2025-12-13 16:35:20] [create_language_version] Connecting to database
+[2025-12-13 16:35:20] [create_language_version] Database connected
+[2025-12-13 16:35:20] [create_language_version] Source flash found: type=yellow
+[2025-12-13 16:35:20] [create_language_version] Translation group ID: 254
+[2025-12-13 16:35:20] [create_language_version] Processing preview image
+[2025-12-13 16:35:21] [create_language_version] Preview image saved: preview_1765636520_693d79a8ecdaa.jpg
+[2025-12-13 16:35:21] [create_language_version] Inserting new translation
+[2025-12-13 16:35:21] [create_language_version] New translation created with ID: 255
+[2025-12-13 16:35:21] [create_language_version] SUCCESS - Translation created, redirecting to view
+[2025-12-13 16:46:08] === PREVIEW DATA DEBUG ===
+[2025-12-13 16:46:08] preview_image_data length: 427151
+[2025-12-13 16:46:08] preview_image_data_2 length: 0
+[2025-12-13 16:46:08] preview_image_data starts with: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
+[2025-12-13 16:46:08] POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-13 16:46:08] === END PREVIEW DEBUG ===
+[2025-12-13 16:46:08] === save_flash.php DEBUG ===
+[2025-12-13 16:46:08] $_FILES count: 3
+[2025-12-13 16:46:08] File 'image1': name=Bergsmannen2.jpeg, error=0, size=579545, tmp_name=/tmp/phpjMuc9V
+[2025-12-13 16:46:08] File 'image2': name=, error=4, size=0, tmp_name=
+[2025-12-13 16:46:08] File 'image3': name=, error=4, size=0, tmp_name=
+[2025-12-13 16:46:08] $_POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-13 16:46:08] type: red
+[2025-12-13 16:46:08] === END DEBUG ===
+[2025-12-13 16:46:09] sf_compress_image: Resized 2000x983 -> 1920x944
+[2025-12-13 16:46:09] sf_handle_uploaded_image: OK - Bergsmannen2.jpeg compressed 579545 -> 467919 bytes (19% reduction)
+[2025-12-13 16:46:09] sf_mail_to_safety_team: CALLED for flashId=256, stateBefore=draft
+[2025-12-13 16:46:09] sf_send_email: CALLED, recipients=no-reply@tapojarvi.online
+[2025-12-13 16:46:09] sf_send_email: MAIL SENT OK
+[2025-12-13 16:46:21] [create_language_version] API called - starting
+[2025-12-13 16:46:21] [create_language_version] Config and auth loaded
+[2025-12-13 16:46:21] [create_language_version] User authenticated: ID=1
+[2025-12-13 16:46:21] [create_language_version] Params: source_id=256, target_lang=en
+[2025-12-13 16:46:21] [create_language_version] Connecting to database
+[2025-12-13 16:46:21] [create_language_version] Database connected
+[2025-12-13 16:46:21] [create_language_version] Source flash found: type=red
+[2025-12-13 16:46:21] [create_language_version] Translation group ID: 256
+[2025-12-13 16:46:21] [create_language_version] Processing preview image
+[2025-12-13 16:46:21] [create_language_version] Preview image saved: preview_1765637181_693d7c3d70c1f.jpg
+[2025-12-13 16:46:21] [create_language_version] Inserting new translation
+[2025-12-13 16:46:21] [create_language_version] New translation created with ID: 257
+[2025-12-13 16:46:21] [create_language_version] SUCCESS - Translation created, redirecting to view
+[2025-12-14 10:59:53] === PREVIEW DATA DEBUG ===
+[2025-12-14 10:59:53] preview_image_data length: 341383
+[2025-12-14 10:59:53] preview_image_data_2 length: 0
+[2025-12-14 10:59:53] preview_image_data starts with: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD
+[2025-12-14 10:59:53] POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-14 10:59:53] === END PREVIEW DEBUG ===
+[2025-12-14 10:59:53] === save_flash.php DEBUG ===
+[2025-12-14 10:59:53] $_FILES count: 3
+[2025-12-14 10:59:53] File 'image1': name=Bergsmannen.jpeg, error=0, size=624549, tmp_name=/tmp/php8SCAbY
+[2025-12-14 10:59:53] File 'image2': name=, error=4, size=0, tmp_name=
+[2025-12-14 10:59:53] File 'image3': name=, error=4, size=0, tmp_name=
+[2025-12-14 10:59:53] $_POST keys: csrf_token, related_flash_id, lang, type, worksite, site_detail, event_date, title, short_text, description, root_causes, actions, library_image_1, library_image_2, library_image_3, image1_transform, image2_transform, image3_transform, annotations_data, preview_image_data, preview_image_data_2, submission_type
+[2025-12-14 10:59:53] type: red
+[2025-12-14 10:59:53] === END DEBUG ===
+[2025-12-14 10:59:53] sf_compress_image: Resized 2543x1247 -> 1920x942
+[2025-12-14 10:59:53] sf_handle_uploaded_image: OK - Bergsmannen.jpeg compressed 624549 -> 364091 bytes (42% reduction)
+[2025-12-14 10:59:53] sf_mail_to_safety_team: CALLED for flashId=258, stateBefore=draft
+[2025-12-14 10:59:53] sf_send_email: CALLED, recipients=no-reply@tapojarvi.online
+[2025-12-14 10:59:53] sf_send_email: MAIL SENT OK
