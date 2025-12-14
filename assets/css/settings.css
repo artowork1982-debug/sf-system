@@ -1,0 +1,1335 @@
+/* assets/css/settings.css */
+/* Puhdistettu versio - yhtenäinen värimaailma */
+
+/* ===== YLEINEN ASETUSSIVU ===== */
+
+.sf-settings-page {
+    max-width: 1200px;
+    margin: 2rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.sf-settings-page h1 {
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+/* Otsikon ikoni */
+.sf-heading-icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+@media (max-width: 768px) {
+    .sf-settings-page {
+        margin: 0;
+        padding: 0;
+    }
+
+    .sf-settings-page h1 {
+        padding: 1rem 1rem 0.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+}
+
+/* ===== VÄLILEHDET ===== */
+
+.sf-tabs {
+    display: inline-flex;
+    border-radius: 999px;
+    background: #f1f5f9;
+    padding: 0.25rem;
+    margin-bottom: 1.5rem;
+    gap: 0.25rem;
+}
+
+.sf-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 120px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #475569;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.sf-tab:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.sf-tab.active {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2);
+}
+
+/* Välilehti-ikonit */
+.sf-tab-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.15s ease, filter 0.15s ease;
+}
+
+.sf-tab:hover .sf-tab-icon {
+    opacity: 1;
+}
+
+.sf-tab.active .sf-tab-icon {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+/* Mobiili: Tabit */
+@media (max-width: 768px) {
+    .sf-tabs {
+        display: flex;
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 0;
+        padding: 0;
+        gap: 0;
+        background: #0f172a;
+    }
+
+    .sf-tab {
+        flex: 1;
+        min-width: 0;
+        padding: 0.9rem 0.5rem;
+        font-size: 0.75rem;
+        border-radius: 0;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        background: transparent;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .sf-tab:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .sf-tab.active {
+        background: #fee000;
+        color: #0f172a;
+        box-shadow: none;
+    }
+
+    .sf-tab-icon {
+        width: 16px;
+        height: 16px;
+        filter: brightness(0) invert(1);
+        opacity: 0.7;
+    }
+
+    .sf-tab:hover .sf-tab-icon {
+        opacity: 1;
+    }
+
+    .sf-tab.active .sf-tab-icon {
+        filter: none;
+        opacity: 1;
+    }
+
+    .sf-tab span {
+        font-size: 0.7rem;
+    }
+}
+
+/* ===== TABIN SISÄLTÖ ===== */
+
+.sf-tabs-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem 1.5rem;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+    border: 1px solid #e5e7eb;
+}
+
+.sf-tabs-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .sf-tabs-content {
+        border-radius: 0;
+        padding: 1rem;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .sf-tabs-content h2 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== NAPIT ===== */
+
+.sf-settings-page .sf-btn,
+.sf-settings-page .sf-btn-small,
+.sf-settings-page .sf-inline-form button,
+.sf-settings-page .sf-form-inline button {
+    border-radius: 999px;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+/* Päänappi - tumma, hover keltainen */
+.sf-settings-page .sf-btn-primary {
+    background: #0f172a;
+    color: #fff;
+}
+
+.sf-settings-page .sf-btn-primary:hover {
+    background: #fee000;
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgba(254, 224, 0, 0.35);
+}
+
+.sf-settings-page .sf-btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* Lisää-napit vihreät (CTA) */
+.sf-library-upload-form .sf-btn-primary,
+.sf-users-header .sf-btn-primary {
+    background: #8fc640;
+    color: #0f172a;
+}
+
+.sf-library-upload-form .sf-btn-primary:hover,
+.sf-users-header .sf-btn-primary:hover {
+    background: #7ab52f;
+    box-shadow: 0 4px 12px rgba(143, 198, 64, 0.4);
+}
+
+/* Sekundäärinen */
+.sf-settings-page .sf-btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.sf-settings-page .sf-btn-secondary:hover {
+    background: #d1d5db;
+}
+
+/* Vaarallinen (Poista) */
+.sf-settings-page .sf-btn-danger {
+    background: #e63946;
+    color: #ffffff;
+}
+
+.sf-settings-page .sf-btn-danger:hover {
+    background: #b91c1c;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+}
+
+/* Pienet napit */
+.sf-settings-page .sf-btn-small {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    margin-right: 6px;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.sf-settings-page .sf-btn-small.sf-edit-user {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.sf-settings-page .sf-btn-small.sf-edit-user:hover {
+    background: #d1d5db;
+}
+
+.sf-settings-page .sf-btn-small.sf-reset-pass {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.sf-settings-page .sf-btn-small.sf-reset-pass:hover {
+    background: #1d4ed8;
+}
+
+.sf-settings-page .sf-btn-small.sf-delete-user {
+    background: #e63946;
+    color: #ffffff;
+}
+
+.sf-settings-page .sf-btn-small.sf-delete-user:hover {
+    opacity: 0.9;
+}
+
+.sf-btn-success {
+    background: #22c55e ! important;
+    color: #fff ! important;
+}
+
+/* Nappi spinner */
+.sf-settings-page .btn-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(15, 23, 42, 0.2);
+    border-top-color: #0f172a;
+    border-radius: 50%;
+    animation: sf-btn-spin 0.8s linear infinite;
+    margin-left: 8px;
+}
+
+.sf-settings-page .btn-spinner.hidden {
+    display: none;
+}
+
+@keyframes sf-btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== KÄYTTÄJÄT ===== */
+
+.sf-users-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+/* ===== TAULUKOT ===== */
+
+.sf-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    font-size: 0.9rem;
+}
+
+.sf-table thead {
+    background: #f3f4f6;
+}
+
+.sf-table th,
+.sf-table td {
+    padding: 0.6rem 0.85rem;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.sf-table th {
+    font-weight: 700;
+    color: #374151;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.sf-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.sf-table-worksites tr.is-inactive {
+    opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+    .sf-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.8rem;
+    }
+
+    .sf-table th,
+    .sf-table td {
+        padding: 0.5rem 0.6rem;
+    }
+}
+
+/* ===== INLINE-LOMAKKEET ===== */
+
+.sf-form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.sf-form-inline label {
+    font-size: 0.9rem;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.sf-form-inline input[type="text"] {
+    min-width: 220px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    background: #ffffff;
+}
+
+.sf-table-worksites .sf-inline-form button {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.sf-table-worksites .sf-inline-form button:hover {
+    background: #d1d5db;
+}
+
+@media (max-width: 900px) {
+    .sf-form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .sf-form-inline {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .sf-form-inline label {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+
+    .sf-form-inline input[type="text"] {
+        min-width: 100%;
+        padding: 10px 12px;
+    }
+
+    .sf-form-inline button {
+        width: 100%;
+        padding: 10px;
+        justify-content: center;
+    }
+}
+
+/* ===== SELECT-KENTÄT ===== */
+
+.sf-table select,
+#sfUserHomeWorksite,
+#sfUserRole {
+    min-width: 180px;
+    max-width: 260px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* ===== MODAALIT ===== */
+
+.sf-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.sf-modal.hidden {
+    display: none;
+}
+
+.sf-modal-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+}
+
+.sf-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sf-modal-content label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.sf-modal-content input[type="text"],
+.sf-modal-content input[type="email"],
+.sf-modal-content input[type="password"],
+.sf-modal-content select {
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+}
+
+.sf-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* ===== TYÖMAAT MOBIILISSA ===== */
+
+@media (max-width: 768px) {
+    .sf-table-worksites {
+        font-size: 0.85rem;
+    }
+
+    .sf-table-worksites th:first-child,
+    .sf-table-worksites td:first-child {
+        display: none;
+    }
+
+    .sf-table-worksites th,
+    .sf-table-worksites td {
+        padding: 10px 8px;
+    }
+}
+
+/* ===== KÄYTTÄJÄT MOBIILIKORTTINÄKYMÄ ===== */
+
+.sf-users-cards {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sf-table-users {
+        display: none;
+    }
+
+    .sf-users-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .sf-user-card {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 14px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .sf-user-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+    }
+
+    .sf-user-card-name {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #111827;
+    }
+
+    .sf-user-card-role {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: #f1f5f9;
+        color: #475569;
+    }
+
+    .sf-user-card-email {
+        font-size: 0.85rem;
+        color: #6b7280;
+        margin-bottom: 4px;
+    }
+
+    .sf-user-card-worksite {
+        font-size: 0.8rem;
+        color: #475569;
+        margin-bottom: 10px;
+    }
+
+    .sf-user-card-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding-top: 10px;
+        border-top: 1px solid #f3f4f6;
+    }
+
+    .sf-user-card-actions .sf-btn-small {
+        flex: 1;
+        min-width: 0;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 0.75rem;
+    }
+
+    .sf-user-card-actions .sf-btn-small.sf-delete-user {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+    }
+
+    .sf-users-header {
+        padding: 0 0 12px 0;
+    }
+
+    .sf-users-header .sf-btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+    }
+}
+
+/* ===== PROFIILISIVU ===== */
+
+.sf-profile-page {
+    max-width: 600px;
+    margin: 2rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.sf-profile-page h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.sf-profile-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+.sf-profile-card h2 {
+    font-size: 1.1rem;
+    margin: 0 0 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.sf-profile-section {
+    margin-bottom: 1.5rem;
+}
+
+.sf-profile-section:last-child {
+    margin-bottom: 0;
+}
+
+.sf-profile-form .sf-field {
+    margin-bottom: 1.25rem;
+}
+
+.sf-profile-form .sf-field:last-child {
+    margin-bottom: 0;
+}
+
+.sf-profile-form .sf-field label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.sf-profile-form .sf-input,
+.sf-profile-form .sf-select {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.sf-profile-form .sf-input:focus,
+.sf-profile-form .sf-select:focus {
+    outline: none;
+    border-color: #0f172a;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+}
+
+.sf-profile-form .sf-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.sf-profile-readonly {
+    padding: 0.65rem 1rem;
+    background: #f3f4f6;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+}
+
+.sf-profile-form .sf-help-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 0.4rem;
+}
+
+.sf-profile-actions {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+}
+
+.sf-profile-page .sf-btn {
+    border-radius: 999px;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.sf-profile-page .sf-btn-primary {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.sf-profile-page .sf-btn-primary:hover {
+    background: #fee000;
+    color: #0f172a;
+}
+
+.sf-profile-page .sf-btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+@media (max-width: 600px) {
+    .sf-profile-page {
+        padding: 0 1rem;
+    }
+
+    .sf-profile-form .sf-field-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+/* ===== TAPAHTUMALOKI ===== */
+
+.sf-audit-subtitle {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.25rem;
+}
+
+.sf-audit-subtitle strong {
+    color: #0f172a;
+    font-size: 1.1rem;
+}
+
+.sf-audit-filters {
+    background: #f8fafc;
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.sf-filter-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 140px 140px;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.sf-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sf-filter-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.sf-filter-input,
+.sf-filter-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    background: #ffffff;
+    color: #1e293b;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.sf-filter-input[type="date"] {
+    min-width: 130px;
+}
+
+.sf-filter-input:focus,
+.sf-filter-select:focus {
+    outline: none;
+    border-color: #0f172a;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+}
+
+.sf-filter-input::placeholder {
+    color: #94a3b8;
+}
+
+.sf-filter-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.sf-filter-buttons .sf-btn {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.sf-audit-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.sf-audit-table {
+    font-size: 0.85rem;
+}
+
+.sf-audit-table th {
+    background: #f1f5f9;
+}
+
+.sf-audit-time {
+    white-space: nowrap;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.sf-audit-user .user-email {
+    font-weight: 500;
+    display: block;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sf-audit-user .user-id {
+    font-size: 0.7rem;
+    color: #9ca3af;
+}
+
+.sf-audit-user .user-anonymous {
+    color: #9ca3af;
+}
+
+.sf-audit-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.action-default {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.action-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.action-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.action-info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.action-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.action-update {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.sf-audit-target .target-id {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+.sf-audit-ip code {
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+}
+
+.sf-btn-details {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    background: #f1f5f9;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.sf-btn-details:hover {
+    background: #e5e7eb;
+}
+
+.sf-no-results {
+    text-align: center;
+    padding: 2rem ! important;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.sf-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.sf-page-info {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.sf-details-pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-family: 'Courier New', monospace;
+    max-height: 300px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 1rem 0;
+}
+
+@media (max-width: 1200px) {
+    .sf-filter-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .sf-filter-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sf-audit-filters {
+        border-radius: 12px;
+        padding: 1rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .sf-audit-table-wrapper {
+        margin: 0 -1rem;
+        width: calc(100% + 2rem);
+    }
+
+    .sf-audit-table {
+        font-size: 0.75rem;
+    }
+
+    .sf-audit-table th,
+    .sf-audit-table td {
+        padding: 8px 10px;
+    }
+
+    .sf-audit-ip {
+        display: none;
+    }
+
+    .sf-audit-user .user-email {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sf-filter-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .sf-filter-group label {
+        font-size: 0.7rem;
+    }
+
+    .sf-filter-input,
+    .sf-filter-select {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .sf-filter-buttons {
+        justify-content: stretch;
+        margin-top: 0.25rem;
+    }
+
+    .sf-filter-buttons .sf-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sf-filter-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .sf-audit-details,
+    .sf-audit-target {
+        display: none;
+    }
+
+    .sf-audit-action {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+}
+
+/* ===== KUVAPANKKI ADMIN ===== */
+
+.sf-library-upload-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sf-library-upload-section h3 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.sf-library-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sf-library-upload-form .sf-field {
+    margin-bottom: 0;
+}
+
+.sf-library-upload-form .sf-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #374151;
+}
+
+.sf-library-upload-form .sf-input,
+.sf-library-upload-form .sf-select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.sf-library-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.sf-library-filter-label {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.85rem;
+}
+
+.sf-library-filter-btn {
+    padding: 6px 14px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.sf-library-filter-btn:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.sf-library-filter-btn.active {
+    background: #0f172a;
+    color: #fff;
+    border-color: #0f172a;
+}
+
+.sf-library-admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.sf-library-admin-item {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.15s ease;
+}
+
+.sf-library-admin-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sf-library-admin-item.inactive {
+    opacity: 0.6;
+}
+
+.sf-library-admin-thumb {
+    position: relative;
+    aspect-ratio: 1;
+    background: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.sf-library-admin-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.sf-library-inactive-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.sf-library-admin-info {
+    padding: 12px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.sf-library-admin-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.sf-library-admin-meta {
+    margin-bottom: 4px;
+}
+
+.sf-library-category-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.category-body {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.category-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.category-equipment {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.category-template {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+.sf-library-admin-desc {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.sf-library-admin-actions {
+    display: flex;
+    gap: 6px;
+    padding: 10px 12px;
+    background: #f9fafb;
+    border-top: 1px solid #f3f4f6;
+}
+
+.sf-library-admin-actions .sf-btn-small {
+    flex: 1;
+    justify-content: center;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+}
+
+.sf-library-empty {
+    text-align: center;
+    padding: 3rem;
+    color: #6b7280;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .sf-library-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sf-library-admin-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .sf-library-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 10px;
+    }
+
+    .sf-library-filter-btn {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sf-library-admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== APUTEKSTI ===== */
+
+.sf-help-text {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+/* ===== Sulava settings-tab vaihto (AJAX) ===== */
+/* HUOM: Älä käytä transformia tässä wrapperissa,
+   koska se rikkoo position:fixed modaalien overlayn (rajautuu sisältöalueeseen). */
+.sf-tabs-content {
+    transition: opacity 180ms ease;
+    will-change: opacity;
+}
+
+.sf-tabs-content.sf-tab-loading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sf-tabs-content {
+        transition: none !important;
+    }
+}

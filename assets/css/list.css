@@ -1,0 +1,1214 @@
+/* list.css - korjattu korttilayout ja pienemmät lippuikonit */
+
+/* Base (kept) */
+.sf-list-page {
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 0 12px;
+    font-family: "Open Sans", sans-serif;
+    color: #0f172a;
+}
+
+.page-title { font-size: 32px; margin-bottom: 20px; font-weight: 700; }
+
+/* FILTERS (ei muutoksia tässä tiedostossa) */
+.filters {
+    background: #fff;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(2,6,23,0.06);
+    margin-bottom: 22px;
+}
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    align-items: end;
+}
+
+.filter-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+    grid-column: span 2;
+}
+.filter-search { grid-column: span 2; }
+.filter-item label { display:block; font-size:13px; margin-bottom:6px; color:#374151; font-weight:600; }
+.filter-item input, .filter-item select { width:100%; padding:10px 12px; border-radius:10px; border:1px solid #e2e8f0; font-size:14px; background:#fff; box-sizing:border-box; }
+.search-row { display:flex; gap:8px; align-items:center; }
+.search-row input { flex:1; }
+.btn-icon { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; border:1px solid #e2e8f0; background:#f8fafc; cursor:pointer; }
+.btn-primary { 
+    background: #0f172a; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 12px; 
+    border: none; 
+    font-weight: 700; 
+    cursor: pointer;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+    background: #fee000;
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgba(254, 224, 0, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    background: #e5c900;
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(254, 224, 0, 0.25);
+}
+
+.btn-secondary { 
+    background: transparent; 
+    color: #0f172a; 
+    padding: 10px 20px; 
+    border-radius: 12px; 
+    border: 1px solid #e6eef5; 
+    text-decoration: none; 
+    cursor: pointer;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-secondary:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    background: #e5e7eb;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments for filters */
+@media (max-width: 1100px) { .filters-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } .filter-search { grid-column: span 1; } }
+@media (max-width: 800px) { .filters-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } .filter-search { grid-column: span 2; } .filter-actions { justify-self: start; } }
+@media (max-width: 520px) { .filters-grid { grid-template-columns: 1fr; } .filter-search { grid-column: auto; width:100%; } .filter-actions .btn-primary, .filter-actions .btn-secondary { width:100%; display:block; text-align:center; } }
+
+/* CARD LIST (updated) */
+.card-list { display:flex; flex-direction:column; gap:18px; }
+
+/* Card: use predictable thumbnail column and flexible content column */
+.card {
+    display:flex;
+    gap:20px;
+    background:#fff;
+    border-radius:16px;
+    padding:14px;
+    box-shadow:0 8px 20px rgba(2,6,23,0.04);
+    border-left: 8px solid transparent;
+    align-items: flex-start;
+}
+
+/* Thumbnail column: fixed width so content doesn't shift */
+/* Thumbnail column: fixed width so content doesn't shift */
+.card-thumb {
+    flex: 0 0 160px;
+    width: 160px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-thumb img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    /* Näyttää koko kuvan */
+    border-radius: 10px;
+    display: block;
+}
+
+/* Main content flows and doesn't overflow */
+.card-mid {
+    flex: 1 1 auto;
+    min-width: 0; /* allow long text to truncate via ellipsis if needed */
+}
+
+/* Top row: badge + status */
+.card-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.card-top .left {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Badge and status */
+.badge { padding:6px 12px; border-radius:12px; font-size:12px; font-weight:700; text-transform:uppercase; white-space:nowrap; }
+.badge-red { background:#fee2e2; color:#b91c1c; }
+.badge-yellow { background:#fef3c7; color:#92400e; }
+.badge-green { background:#dcfce7; color:#166534; }
+
+/* Status pills in list use classes from statuses.php and global.css variables */
+.status { padding:5px 10px; border-radius:10px; font-weight:700; font-size:12px; white-space:nowrap; }
+.status-draft { background: var(--status-draft-bg, #f3f4f6); color: var(--status-draft-text, #111827); }
+.status-pending { background: var(--status-pending-bg, #fee000); color: var(--status-pending-text, #111827); }
+.status-request-info { background: var(--status-request-bg, #fb923c); color: var(--status-request-text, #111827); }
+.status-to-comms { background: var(--status-comms-bg, #3b82f6); color: var(--status-comms-text, #ffffff); }
+.status-published { background: var(--status-published-bg, #16a34a); color: var(--status-published-text, #ffffff); }
+.status-reviewed { background:#dbeafe; color:#1e3a8a; }
+.status-other { background:#e0f2fe; color:#0369a1; }
+
+/* Title and site */
+.card-title { font-size:17px; font-weight:700; margin-bottom:6px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.card-site { font-size:14px; margin-bottom:8px; color:#475569; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* Card meta row */
+.card-meta {
+    font-size: 12px;
+    color: #6b7280;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.card-date,
+.card-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+/* Meta-ikoni (inline SVG) */
+.meta-icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    stroke: #9ca3af;
+    /* Harmaa väri */
+}
+
+@media (max-width: 720px) {
+    .meta-icon {
+        width: 11px;
+        height: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .meta-icon {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Actions column: keep compact and align icons smaller */
+.card-actions {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
+    flex: 0 0 auto;
+    min-width: 72px;
+}
+
+/* Open button */
+.open-btn {
+    background: #0f172a;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.open-btn:hover {
+    background: #fee000;
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgba(254, 224, 0, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Language flags row: make icons small and consistent */
+.card-lang-actions {
+    display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 6px;
+        justify-content: flex-end;
+}
+
+/* Flag icon sizing - reduced so they don't dominate the card */
+.list-lang-flag {
+    width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: inline-block;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        transition: transform 0. 15s ease;
+}
+
+/* If you also output variant 'exists' class, keep it */
+.list-lang-flag.exists { opacity: 1; }
+
+/* Plus small add button for translations (if present) */
+.lang-add-small {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #0f172a;
+    color: #fff;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Left color stripe (keeps) */
+.card.type-red { border-left-color: #ef4444; }
+.card.type-yellow { border-left-color: #facc15; }
+.card.type-green { border-left-color: #22c55e; }
+
+/* Hover and focus for whole card */
+.card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.card:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
+}
+
+.card:active {
+    transform: translateY(0);
+}
+/* MOBILE adjustments: stack, make thumb full-width and flags inline under content */
+@media (max-width: 720px) {
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .card-thumb {
+        width: 100%;
+        flex: 0 0 auto;
+        height: auto;
+    }
+
+    .card-thumb img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        border-radius: 10px;
+        object-fit: contain;
+    }
+    .card-actions { width:100%; align-items:flex-start; margin-top:0; flex-direction:row; gap:12px; }
+    .card-lang-actions { order: 2; margin-top:0; }
+        .card-top {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 6px;
+        }
+    
+        .card-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }    .card-title, .card-site { white-space:normal; }
+}
+
+/* Minor utility */
+.no-results { padding: 20px; font-size: 15px; color:#475569; }
+
+/* ===== BULK DELETE (YLLÄPITÄJÄ) ===== */
+.sf-bulk-actions {
+    margin-bottom: 16px;
+}
+
+.sf-bulk-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #fcd34d;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
+}
+
+@media (max-width: 600px) {
+    .sf-bulk-bar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .sf-bulk-count {
+        order: -1;
+        width: 100%;
+    }
+
+    #sfBulkDelete {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.sf-bulk-select-all {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sf-bulk-select-all input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.sf-bulk-count {
+    font-size: 0.9rem;
+    color: #92400e;
+    font-weight: 600;
+}
+
+.sf-btn-danger {
+    background: #dc2626;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sf-btn-danger:hover:not(:disabled) {
+    background: #b91c1c;
+}
+
+.sf-btn-danger:disabled {
+    background: #fca5a5;
+    cursor: not-allowed;
+}
+
+/* Checkbox kortissa */
+.card-checkbox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.card-checkbox {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.card-checkbox input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #0f172a;
+}
+
+@media (max-width: 720px) {
+    .card-checkbox {
+        top: 12px;
+        left: 12px;
+        padding: 6px;
+    }
+
+    .card-checkbox input[type="checkbox"] {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* Kortti tarvitsee position: relative */
+.card {
+    position: relative;
+}
+
+/* Poistolista modaalissa - scrollattava */
+.sf-bulk-delete-list {
+    flex: 1 1 auto;
+    max-height: 300px;
+    min-height: 60px;
+    overflow-y: auto;
+    margin: 12px 0;
+    padding: 10px;
+    background: #f9fafb;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid #e5e7eb;
+}
+
+.sf-bulk-delete-list ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.sf-bulk-delete-list li {
+    margin-bottom: 4px;
+}
+/* ===== MODALIT (list-sivulle) ===== */
+.sf-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.sf-modal.hidden {
+    display: none;
+}
+
+.sf-modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Ei scroll koko modaaliin */
+}
+
+.sf-modal-content h2 {
+    margin: 0 0 12px;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.sf-modal-content p {
+    margin: 0 0 12px;
+    flex-shrink: 0;
+}
+.sf-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    flex-shrink: 0;
+    /* Ei kutistu koskaan */
+}
+
+.sf-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.sf-btn-secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.sf-btn-secondary:hover {
+    background: #d1d5db;
+}
+/* Thumbnail column: fixed width, overflow visible for badge */
+.card-thumb {
+    flex: 0 0 160px;
+    width: 160px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.card-thumb img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ===== KOMMENTTI-BADGE (kuvan yläkulma, osittain ulkona) ===== */
+.comment-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+.comment-badge-icon {
+    width: 100%;
+    height: 100%;
+    fill: #ef4444;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.comment-badge-count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.comment-badge:hover .comment-badge-icon {
+    fill: #dc2626;
+}
+
+@media (max-width: 720px) {
+    .card-thumb {
+        width: 100%;
+        flex: 0 0 auto;
+        height: auto;
+        overflow: visible;
+    }
+
+    .card-thumb img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        border-radius: 10px;
+        object-fit: contain;
+    }
+
+    .comment-badge {
+        width: 26px;
+        height: 26px;
+        top: -6px;
+        right: -6px;
+    }
+
+    .comment-badge-count {
+        font-size: 10px;
+    }
+}
+/* ===== MOBIILISUODATTIMET ===== */
+
+/* Toggle-nappi - piilotettu desktopilla */
+.filters-toggle {
+    display: none;
+    width: 100%;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+
+.filters-toggle:hover {
+    background: #f8fafc;
+}
+
+.filters-toggle svg:first-child {
+    flex-shrink: 0;
+}
+
+.filters-toggle span {
+    flex: 1;
+    text-align: left;
+}
+
+.toggle-arrow {
+    transition: transform 0.25s ease;
+}
+
+.filters-toggle.open .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+/* Mobiili: näytä toggle, piilota grid oletuksena */
+@media (max-width: 720px) {
+    .filters-toggle {
+        display: flex;
+        margin-bottom: 12px;
+    }
+
+    .filters-grid {
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .filters-grid.open {
+        display: grid;
+    }
+
+    /* Päivämäärät vierekkäin */
+    .filter-date-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    /* Hakukenttä täysleveä */
+    .filter-search {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    /* Napit vierekkäin */
+    .filter-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        grid-column: auto;
+    }
+
+    .filter-actions .btn-primary,
+    .filter-actions .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px;
+    }
+
+    /* Pienempi fontti labeleille */
+    .filter-item label {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    /* Pienempi padding inputeille */
+    .filter-item input,
+    .filter-item select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Filters-laatikko */
+    .filters {
+        padding: 12px;
+        border-radius: 12px;
+    }
+}
+
+/* Pieni näyttö - napit päällekkäin */
+@media (max-width: 400px) {
+    .filter-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-date-row {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== NAPPI-IKONIT ===== */
+.btn-icon-img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+    /* Muuttaa valkoiseksi */
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.sf-btn-danger:hover .btn-icon-img {
+    filter: brightness(0) invert(1);
+    /* Pysyy valkoisena hoverissa */
+}
+
+.sf-btn-danger:disabled .btn-icon-img {
+    opacity: 0.6;
+}
+
+/* ===== NAPPI SPINNER ===== */
+.btn-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: btn-spin 0.8s linear infinite;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+@keyframes btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* ===== TYHJÄ TILA - EI HAKUTULOKSIA ===== */
+.no-results-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    text-align: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    border: 2px dashed #e2e8f0;
+}
+
+.no-results-icon-wrap {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.no-results-icon {
+    width: 40px;
+    height: 40px;
+    stroke: #94a3b8;
+}
+
+.no-results-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #334155;
+    margin: 0 0 8px;
+}
+
+.no-results-hint {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0 0 24px;
+    max-width: 320px;
+}
+
+/* CTA-nappi - sama tyyli kuin navissa */
+.no-results-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px 14px 18px;
+    background: #8fc640;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(143, 198, 64, 0.35);
+}
+
+.no-results-cta:hover {
+    background: #7ab52f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(143, 198, 64, 0.45);
+}
+
+.no-results-cta:active {
+    transform: translateY(0);
+}
+
+.no-results-cta-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Mobiili */
+@media (max-width: 600px) {
+    .no-results-box {
+        padding: 40px 20px;
+        border-radius: 16px;
+    }
+
+    .no-results-icon-wrap {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 16px;
+    }
+
+    .no-results-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .no-results-text {
+        font-size: 1.1rem;
+    }
+
+    .no-results-hint {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .no-results-cta {
+        padding: 12px 20px 12px 16px;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+        max-width: 280px;
+    }
+}
+/* ===== MOBIILI - KORTIT REUNASTA REUNAAN ===== */
+@media (max-width: 720px) {
+    /* Lista-sivu - minimaalinen padding */
+    .sf-list-page {
+        margin: 0;
+        padding: 6px 4px;
+    }
+
+    .page-title {
+        font-size: 1.4rem;
+        margin: 8px 6px 12px;
+    }
+
+    /* Suodattimet - pieni marginaali */
+    .filters {
+        margin: 0 2px 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .filters-toggle {
+        margin-bottom: 8px;
+        padding: 10px 12px;
+        border-radius: 8px;
+    }
+
+    /* Bulk-toiminnot */
+    .sf-bulk-actions {
+        margin: 0 2px 10px;
+    }
+
+    .sf-bulk-bar {
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+
+    /* Kortit - reunasta reunaan */
+    .card-list {
+        gap: 8px;
+    }
+
+    .card {
+        margin: 0 2px;
+        padding: 10px;
+        border-radius: 10px;
+        gap: 10px;
+        border-left-width: 5px;
+    }
+
+    /* Thumbnail */
+    .card-thumb {
+        border-radius: 8px;
+        max-height: 200px;
+    }
+
+    .card-thumb img {
+        max-height: 200px;
+        border-radius: 8px;
+    }
+
+    /* Tyhjä tila */
+    .no-results-box {
+        margin: 0 2px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Erittäin pieni näyttö - täysin reunasta reunaan */
+    .sf-list-page {
+        padding: 4px 2px;
+    }
+
+    .page-title {
+        font-size: 1.25rem;
+        margin: 6px 4px 10px;
+    }
+
+    .filters {
+        margin: 0 0 8px;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .sf-bulk-actions {
+        margin: 0 0 8px;
+    }
+
+    .sf-bulk-bar {
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    .card {
+        margin: 0;
+        padding: 8px;
+        border-radius: 8px;
+        border-left-width: 4px;
+    }
+
+    .card-thumb {
+        border-radius: 6px;
+        max-height: 160px;
+    }
+
+    .card-thumb img {
+        max-height: 160px;
+        border-radius: 6px;
+    }
+
+    .no-results-box {
+        margin: 0;
+        border-radius: 10px;
+        padding: 30px 16px;
+    }
+}
+/* ===== MOBIILI - KOMPAKTI KORTTI ===== */
+@media (max-width: 720px) {
+    .sf-list-page {
+        margin: 0;
+        padding: 8px;
+    }
+
+    .page-title {
+        font-size: 1.3rem;
+        margin: 8px 4px 12px;
+    }
+
+    .card-list {
+        gap: 10px;
+    }
+
+    .card {
+        flex-direction: column;
+        margin: 0;
+        padding: 12px;
+        border-radius: 12px;
+        gap: 0;
+        border-left-width: 6px;
+    }
+
+    /* Piilota thumbnail mobiilissa */
+    .card-thumb {
+        display: none;
+    }
+
+    /* Kommentti-badge kortin oikeaan yläkulmaan */
+    .comment-badge {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .comment-badge-count {
+        font-size: 10px;
+    }
+
+    .card-mid {
+        width: 100%;
+    }
+
+    /* Yläosa: badge + status */
+    .card-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+
+    .badge {
+        padding: 4px 10px;
+        font-size: 11px;
+        border-radius: 6px;
+    }
+
+    .status {
+        padding: 4px 10px;
+        font-size: 11px;
+        border-radius: 6px;
+    }
+
+    .card-title {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .card-site {
+        font-size: 13px;
+        margin-bottom: 6px;
+        color: #64748b;
+    }
+
+    .card-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 11px;
+        color: #94a3b8;
+        margin-bottom: 10px;
+    }
+
+    /* ===== FOOTER: Avaa-nappi + Kieliliput ===== */
+    .card-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-top: 10px;
+        border-top: 1px solid #f1f5f9;
+        gap: 10px;
+        margin-top: 6px;
+    }
+
+    .open-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    /* ===== KIELILIPUT PÄÄLLEKKÄIN ===== */
+    .card-lang-actions {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .list-lang-flag {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        margin-left: -10px;
+        position: relative;
+        transition: transform 0.15s ease;
+    }
+
+    .list-lang-flag:first-child {
+        margin-left: 0;
+    }
+
+    .list-lang-flag:hover {
+        transform: scale(1.2);
+        z-index: 10;
+    }
+
+    /* Checkbox */
+    .card-checkbox {
+        top: 10px;
+        right: 10px;
+        left: auto;
+        padding: 2px;
+    }
+
+    .card-checkbox input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ===== PIENI NÄYTTÖ ===== */
+@media (max-width: 400px) {
+    .sf-list-page {
+        padding: 6px;
+    }
+
+    .card {
+        padding: 10px;
+        border-radius: 10px;
+        border-left-width: 5px;
+    }
+
+    .badge,
+    .status {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-site {
+        font-size: 12px;
+    }
+
+    .card-meta {
+        font-size: 10px;
+        gap: 8px;
+    }
+
+    .open-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .list-lang-flag {
+        width: 24px;
+        height: 24px;
+        margin-left: -8px;
+    }
+}

@@ -1,0 +1,1458 @@
+/* view.css - modernisoitu, saavutettava versio */
+
+:root {
+    --btn-neutral-bg: #4b5563;
+    --btn-primary-bg: #2563eb;
+    --btn-warning-bg: #f97316;
+    --btn-success-bg: #16a34a;
+    --btn-danger-bg: #dc2626;
+}
+
+.view-container {
+    max-width: 1200px;
+    margin: 24px auto 40px;
+    padding: 24px 12px 120px;
+    font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    box-sizing: border-box;
+    color: #111827;
+}
+
+.view-back {
+    margin-bottom: 16px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: none;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-back:hover,
+.btn-back:focus {
+    background: #0b1220;
+    outline: none;
+    box-shadow: 0 4px 14px rgba(2, 6, 23, 0.25);
+}
+
+.view-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+}
+
+.view-box {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e6e9ee;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+    padding: 16px 18px;
+    box-sizing: border-box;
+}
+
+.preview-box {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    position: relative;
+}
+
+.meta-box {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.log-box {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.actions-box {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.preview-image {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    border: 2px dashed #e6eef8;
+    background: #fbfdff;
+    border-radius: 8px;
+}
+
+.meta-box h2,
+.log-box h2,
+.actions-box h2,
+.section-heading {
+    font-size: 1rem;
+    margin: 0 0 10px;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #f3f4f6;
+    padding: 10px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-heading-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    flex-shrink: 0;
+}
+
+.section-heading-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.section-heading-text {
+    flex: 1;
+}
+
+.section-heading-log .section-heading-icon {
+    color: #2563eb;
+}
+
+.section-heading-system .section-heading-icon {
+    color: #4b5563;
+}
+
+.meta-item {
+    font-size: 0.95rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.meta-item strong {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meta-item+.meta-item {
+    border-top: 1px dashed #eef2f7;
+    padding-top: 10px;
+}
+
+.meta-status-top {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin-top: -35px;
+}
+
+.meta-status-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #eef2f7;
+    padding: 8px 12px;
+    border-radius: 35px;
+    box-shadow: 0 2px 8px rgba(2, 6, 23, 0.04);
+}
+
+.meta-status-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.status-pill {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* TAPAHTUMALOKI */
+.sf-log-panel {
+    margin-top: 32px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #e6e9ee;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    font-size: 14px;
+    line-height: 1.5;
+    color: #111827;
+}
+
+
+
+.sf-log-title {
+    margin: 0 0 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #f3f6f9;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.sf-log-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.sf-log-item {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 10px 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-top: 1px solid #f3f6f9;
+}
+
+.sf-log-item:first-child {
+    border-top: none;
+}
+
+.sf-log-item:hover {
+    background: #fbfcfe;
+}
+
+.sf-log-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #e6f0ff, #d7e9ff);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b3a8a;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(3, 10, 26, 0.04);
+}
+
+.sf-log-header-row {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 2px;
+}
+
+.sf-log-type {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.sf-log-time {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sf-log-message {
+    font-size: 14px;
+    color: #111827;
+    line-height: 1.4;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    max-height: 4.2rem;
+    overflow: hidden;
+    transition: max-height 0.18s ease;
+}
+
+.sf-log-message.expanded {
+    max-height: 1000px;
+}
+
+.sf-log-more {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1158ff;
+    cursor: pointer;
+}
+
+.sf-log-meta {
+    text-align: right;
+    min-width: 140px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sf-log-user {
+    display: block;
+    margin-top: 2px;
+    font-weight: 500;
+    color: #111827;
+}
+
+.log-status-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+    vertical-align: middle;
+    line-height: 1.2;
+}
+
+@media (max-width: 700px) {
+    .sf-log-item {
+        grid-template-columns: 32px 1fr;
+    }
+
+    .sf-log-meta {
+        grid-column: 2;
+        text-align: left;
+        margin-top: 4px;
+    }
+}
+
+/* ===== FOOTER ACTION BAR (OMAT IKONIT) ===== */
+.view-footer-actions {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.1);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.view-footer-buttons,
+.view-footer-buttons-4col {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Lomake footerissa */
+.footer-form {
+    display: contents;
+}
+
+/* Ikoni-nappi tyyli */
+.footer-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+    max-width: 150px;
+    padding: 10px 8px 12px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #6b7280;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+    position: relative;
+}
+
+/* Ikoni-kuva */
+.footer-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.15s ease;
+}
+
+/* Teksti */
+.footer-btn .btn-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: inherit;
+    white-space: normal;
+    word-wrap: break-word;
+    hyphens: auto;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Hover & active */
+.footer-btn:hover,
+.footer-btn:focus {
+    background: #f3f4f6;
+}
+
+.footer-btn:hover .footer-icon {
+    transform: scale(1.1);
+}
+
+.footer-btn:active {
+    background: #e5e7eb;
+    transform: scale(0.95);
+}
+
+/* Värikoodattu yläreuna hoverissa */
+.footer-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    transition: background 0.2s ease;
+}
+
+/* Värit per nappi */
+.fb-edit { color: #2563eb; }
+.fb-edit:hover::before { background: #2563eb; }
+.fb-edit:hover { background: #eff6ff; }
+
+.fb-comment { color: #6b7280; }
+.fb-comment:hover::before { background: #6b7280; }
+.fb-comment:hover { background: #f9fafb; }
+
+.fb-request { color: #ea580c; }
+.fb-request:hover::before { background: #ea580c; }
+.fb-request:hover { background: #fff7ed; }
+
+.fb-comms { color: #2563eb; }
+.fb-comms:hover::before { background: #2563eb; }
+.fb-comms:hover { background: #eff6ff; }
+
+.fb-publish { color: #16a34a; }
+.fb-publish:hover::before { background: #16a34a; }
+.fb-publish:hover { background: #f0fdf4; }
+
+.fb-delete { color: #dc2626; }
+.fb-delete:hover::before { background: #dc2626; }
+.fb-delete:hover { background: #fef2f2; }
+
+/* Disabled */
+.footer-btn[aria-disabled="true"],
+.footer-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Erotinviivat nappien välissä */
+.footer-btn + .footer-btn {
+    border-left: 1px solid #e5e7eb;
+}
+
+/* ===== MOBIILI FOOTER ===== */
+@media (max-width: 640px) {
+    .footer-btn {
+        padding: 8px 4px 10px;
+        max-width: none;
+        gap: 4px;
+    }
+
+    .footer-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-btn .btn-label {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-btn {
+        padding: 6px 2px 8px;
+        gap: 3px;
+    }
+
+    .footer-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-btn .btn-label {
+        font-size: 0.65rem;
+    }
+}
+/* KIELIVALITSIN */
+.lang-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+    justify-content: flex-start;
+}
+
+.lang-chip {
+    position: relative;
+    border-radius: 999px;
+    background-color: #f3f4f6;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    border: 1px solid #e6eef5;
+    background: #fff;
+}
+
+.lang-chip.has-version {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.lang-chip.active {
+    background-color: #fee000;
+    border: 1px solid #fee000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.lang-chip:not(.active):hover {
+    background-color: #e5e7eb;
+    border-color: #d1d5db;
+}
+
+.lang-chip .lang-link,
+.lang-chip .lang-add-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px;
+    text-decoration: none;
+    color: #111827;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lang-chip.active .lang-link,
+.lang-chip.active .lang-add-button {
+    color: #111827;
+}
+
+.lang-flag-img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-right: 0.35rem;
+    object-fit: cover;
+    border: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.lang-label {
+    line-height: 1;
+}
+
+/* LATAA JPG NAPPI */
+.preview-download-wrapper {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 10;
+}
+
+.btn-download-preview {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.btn-download-preview:hover {
+    background: #fff;
+    border-color: #007bff;
+    color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-download-preview svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .btn-download-preview span {
+        display: none;
+    }
+
+    .btn-download-preview {
+        padding: 10px;
+    }
+}
+
+/* ===== MOBIILI VIEW-SIVU (KORJATTU) ===== */
+@media (max-width: 900px) {
+    .view-container {
+        margin: 12px auto 20px;
+        padding: 12px 8px 160px;
+    }
+
+    /* MOBIILISSA YKSI SARAKE */
+    .view-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 16px;
+    }
+
+    .preview-box {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .meta-box {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .log-box {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .view-box {
+        padding: 12px 14px;
+        border-radius: 12px;
+    }
+
+    /* Meta-tiedot tiiviimmin */
+    .meta-item {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .meta-item + .meta-item {
+        padding-top: 8px;
+    }
+
+    .section-heading {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .view-container {
+        margin: 8px auto 16px;
+        padding: 8px 6px 180px; /* Vielä enemmän tilaa footerille */
+    }
+
+    .view-back {
+        margin-bottom: 10px;
+    }
+
+    .btn-back {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+        /* Kielivalitsin - rivittyy siististi */
+        .lang-switcher {
+            gap: 8px;
+            margin-bottom: 16px;
+            justify-content: flex-start;
+        }
+    
+        .lang-chip {
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+        }
+    
+        .lang-flag-img {
+            width: 22px;
+            height: 22px;
+            margin-right: 0.25rem;
+        }
+    
+        .lang-label {
+            font-size: 0.75rem;
+        }
+
+    .lang-chip {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .lang-flag-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Preview-kuva */
+    .preview-image {
+        max-height: 280px;
+    }
+
+    /* Meta-boksi */
+    .meta-box h2,
+    .log-box h2 {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+        margin-bottom: 8px;
+    }
+
+    .meta-item {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+
+    .meta-item strong {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+
+        /* Status pill - ei negatiivista marginia mobiilissa */
+        .meta-status-top {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+    .meta-status-left {
+        padding: 6px 10px;
+        gap: 8px;
+    }
+
+    .status-pill {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+
+    /* Loki tiiviimmin */
+    .sf-log-panel {
+        margin-top: 16px;
+        padding: 12px;
+    }
+
+    .sf-log-item {
+        padding: 8px 0;
+        grid-template-columns: 28px 1fr;
+        gap: 8px;
+    }
+
+    .sf-log-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .sf-log-type {
+        font-size: 12px;
+    }
+
+    .sf-log-time {
+        font-size: 10px;
+    }
+
+    .sf-log-message {
+        font-size: 12px;
+        max-height: 3em;
+    }
+}
+
+/* ===== FOOTER MOBIILISSA (KORJATTU) ===== */
+@media (max-width: 640px) {
+    .view-footer-actions {
+        padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    .view-footer-buttons,
+    .view-footer-buttons-4col {
+        padding: 6px 8px 8px;
+        gap: 6px;
+    }
+
+    .footer-btn {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+        border-radius: 10px;
+        flex: 1 1 calc(50% - 6px);
+        min-width: 0;
+    }
+
+    .footer-btn svg {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+    }
+
+    .footer-btn .btn-label {
+        font-size: 0.7rem;
+    }
+}
+
+/* Erittäin pienet näytöt - 3 nappia per rivi */
+@media (max-width: 400px) {
+    .view-footer-buttons,
+    .view-footer-buttons-4col {
+        padding: 4px 6px 6px;
+        gap: 4px;
+    }
+
+    .footer-btn {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+        flex: 1 1 calc(33% - 4px);
+    }
+
+    /* Piilota teksti, näytä vain ikoni */
+    .footer-btn .btn-label {
+        display: none;
+    }
+
+    .footer-btn svg {
+        margin-right: 0;
+    }
+}
+
+/* NAPIT */
+.sf-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.sf-btn-primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.sf-btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.sf-btn-secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.sf-btn-secondary:hover {
+    background: #d1d5db;
+}
+
+.sf-btn-danger {
+    background: #dc2626;
+    color: #fff;
+}
+
+.sf-btn-danger:hover {
+    background: #b91c1c;
+}
+
+/* ===== KIELIVERSIO-MODAALI (vaiheittainen) ===== */
+.sf-modal-translation {
+    max-width: 600px;
+    width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.sf-translation-step {
+    display: flex;
+    flex-direction: column;
+}
+
+.sf-translation-step.hidden {
+    display: none;
+}
+
+/* Vaihe-indikaattori */
+.sf-step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.sf-step {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.sf-step.active {
+    background: #2563eb;
+    color: #fff;
+}
+
+.sf-step.done {
+    background: #16a34a;
+    color: #fff;
+}
+
+.sf-step-line {
+    width: 40px;
+    height: 3px;
+    background: #e5e7eb;
+    border-radius: 2px;
+}
+
+.sf-step-line.done {
+    background: #16a34a;
+}
+
+/* Lomakekentät */
+.sf-field {
+    margin-bottom: 16px;
+}
+
+.sf-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.sf-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    resize: vertical;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.sf-textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.sf-char-count {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.sf-translation-lang-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.sf-translation-lang-display img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+/* Preview wrapper - 16:9 aspect ratio */
+.sf-translation-preview-wrapper {
+    background: #f1f5f9;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 16px;
+        overflow: hidden;
+}
+
+#sfTranslationPreviewContainer {
+    position: relative;
+        width: 100%;
+        background: #e2e8f0;
+        border-radius: 6px;
+        overflow: hidden;
+        /* Käytetään aspect-ratio containerin korkeuden laskemiseen */
+        aspect-ratio: 16 / 9;
+}
+
+#sfTranslationPreviewContainer .sf-preview-card {
+    position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        transform-origin: top left;
+        /* Estetään sisällön ylivuoto */
+        overflow: hidden;
+        /* Varmistetaan että kortti näkyy */
+        pointer-events: none;
+}
+@supports not (aspect-ratio: 16 / 9) {
+    #sfTranslationPreviewContainer {
+        padding-bottom: 56.25%;
+        /* 9/16 = 0.5625 */
+        height: 0;
+    }
+}
+/* Status */
+.sf-translation-status {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.sf-translation-status:empty {
+    display: none;
+}
+
+.sf-translation-status.loading {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.sf-translation-status.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.sf-translation-status.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Mobiili */
+@media (max-width: 600px) {
+    .sf-modal-translation {
+        max-width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        padding: 16px;
+    }
+}
+/* ===== TUTKINTATIEDOTTEEN PREVIEW-VÄLILEHDET ===== */
+.sf-view-preview-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sf-view-tab-btn {
+    padding: 8px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px 8px 0 0;
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sf-view-tab-btn:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.sf-view-tab-btn.active {
+    background: #ffffff;
+    border-bottom-color: #ffffff;
+    color: #111827;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sf-view-preview-cards {
+    position: relative;
+}
+
+.sf-view-preview-card {
+    display: none;
+}
+
+.sf-view-preview-card.active {
+    display: block;
+}
+
+.sf-preview-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: #f9fafb;
+    border: 2px dashed #e5e7eb;
+    border-radius: 8px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+/* Latausnapit vierekkäin tutkintatiedotteelle */
+.preview-box .preview-download-wrapper {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.preview-box .preview-download-wrapper .btn-download-preview {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+}
+/* ===== LOKIN VIESTILAATIKOT ===== */
+.sf-log-message-box {
+    margin-top: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.sf-log-message-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+}
+
+/* Kommentti - neutraali siniharmaa */
+.sf-log-message-box.sf-log-comment {
+    background: #f0f4f8;
+    border-left-color: #64748b;
+}
+
+.sf-log-message-box.sf-log-comment .sf-log-message-label {
+    color: #475569;
+}
+
+/* Viesti viestinnälle - vihreä */
+.sf-log-message-box.sf-log-comms {
+    background: #ecfdf5;
+    border-left-color: #10b981;
+}
+
+.sf-log-message-box.sf-log-comms .sf-log-message-label {
+    color: #047857;
+}
+
+/* Palautettu korjattavaksi - oranssi/keltainen */
+.sf-log-message-box.sf-log-return {
+    background: #fffbeb;
+    border-left-color: #f59e0b;
+}
+
+.sf-log-message-box.sf-log-return .sf-log-message-label {
+    color: #b45309;
+}
+/* ===== MOBIILI - KOMPAKTI NÄKYMÄ ===== */
+@media (max-width: 900px) {
+    .view-container {
+        margin: 0;
+        padding: 8px;
+        padding-bottom: 100px;
+        max-width: 100%;
+    }
+
+    .view-back {
+        margin-bottom: 8px;
+    }
+
+    .btn-back {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+    }
+
+    /* Kielivalitsin - tiiviimpi */
+    .lang-switcher {
+        gap: 6px;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    .lang-chip {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .lang-flag-img {
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+    }
+
+    .lang-label {
+        font-size: 0.7rem;
+    }
+
+    /* Grid - yksi sarake */
+    .view-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Laatikot - vähemmän paddingia */
+    .view-box {
+        padding: 10px 12px;
+        border-radius: 10px;
+        margin: 0;
+    }
+
+    /* Preview-kuva - koko leveys */
+    .preview-box {
+        padding: 8px;
+    }
+
+    .preview-image {
+        max-height: none;
+        border-radius: 6px;
+        border-width: 1px;
+    }
+
+    /* Lataa-nappi pienempi */
+    .preview-download-wrapper {
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .btn-download-preview {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        border-radius: 4px;
+    }
+
+    .btn-download-preview svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Meta-tiedot - tiiviimpi */
+    .meta-box {
+        gap: 6px;
+    }
+
+    .meta-status-top {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .meta-status-left {
+        padding: 4px 10px;
+        gap: 6px;
+        border-radius: 20px;
+    }
+
+    .meta-status-label {
+        font-size: 0.65rem;
+    }
+
+    .status-pill {
+        padding: 3px 8px;
+        font-size: 0.7rem;
+    }
+
+    .section-heading {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        margin-bottom: 6px;
+        border-radius: 6px;
+    }
+
+    .section-heading-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .section-heading-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .meta-item {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+        padding-top: 6px;
+    }
+
+    .meta-item strong {
+        font-size: 0.75rem;
+        margin-bottom: 2px;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+
+    .meta-item+.meta-item {
+        padding-top: 6px;
+        border-top: 1px dashed #f0f0f0;
+    }
+
+    .meta-separator {
+        margin: 10px 0;
+    }
+
+    /* Loki - kompakti */
+    .sf-log-panel {
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .sf-log-item {
+        padding: 8px 0;
+        grid-template-columns: 28px 1fr;
+        gap: 8px;
+    }
+
+    .sf-log-avatar {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+
+    .sf-log-header-row {
+        gap: 6px;
+        margin-bottom: 2px;
+    }
+
+    .sf-log-type {
+        font-size: 0.8rem;
+    }
+
+    .sf-log-time {
+        font-size: 0.65rem;
+    }
+
+    .sf-log-message {
+        font-size: 0.8rem;
+        line-height: 1.35;
+        max-height: 3.5em;
+    }
+
+    .sf-log-more {
+        font-size: 0.7rem;
+    }
+
+    .sf-log-meta {
+        display: none;
+        /* Piilota mobiilissa */
+    }
+
+    /* Footer - kompakti */
+    .view-footer-actions {
+        padding: 0;
+    }
+
+    .view-footer-buttons-4col {
+        padding: 6px 4px;
+        gap: 0;
+    }
+
+    .footer-btn {
+        padding: 8px 4px;
+        gap: 2px;
+        border-radius: 0;
+        min-width: 0;
+        max-width: none;
+    }
+
+    .footer-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-btn .btn-label {
+        font-size: 0.6rem;
+        line-height: 1.2;
+    }
+
+    .footer-btn::before {
+        height: 2px;
+    }
+}
+
+/* ===== ERITTÄIN PIENI NÄYTTÖ ===== */
+@media (max-width: 400px) {
+    .view-container {
+        padding: 6px;
+        padding-bottom: 90px;
+    }
+
+    .view-box {
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    .lang-chip {
+        padding: 3px 6px;
+    }
+
+    .lang-flag-img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .section-heading {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .meta-item {
+        font-size: 0.8rem;
+    }
+
+    .footer-btn .btn-label {
+        display: none;
+    }
+
+    .footer-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
